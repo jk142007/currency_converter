@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Currency Converter</title>
+  <style>
+    body {
+      background: #1c1c1c;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    form {
+      background: #2e2e2e;
+      padding: 20px;
+      border-radius: 12px;
+      display: inline-block;
+    }
+    input, select, button {
+      margin: 10px;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #0984e3;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #74b9ff;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #00cec9;
+    }
+    a {
+      color: #81ecec;
+      display: block;
+      margin-top: 30px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Currency Converter 💱</h1>
+  <form method="POST">
+    <input type="number" name="amount" placeholder="Enter Amount" step="any" required>
+    <br>
+    <label>From:</label>
+    <select name="from" required>
+      <option value="USD">USD $</option>
+      <option value="INR">INR ₹</option>
+      <option value="GBP">Pound £</option>
+      <option value="EUR">Euro €</option>
+      <option value="AED">Dirham د.إ</option>
+    </select>
+    <br>
+    <label>To:</label>
+    <select name="to" required>
+      <option value="USD">USD $</option>
+      <option value="INR">INR ₹</option>
+      <option value="GBP">Pound £</option>
+      <option value="EUR">Euro €</option>
+      <option value="AED">Dirham د.إ</option>
+    </select>
+    <br>
+    <button type="submit">Convert</button>
+  </form>
+
+  {% if result %}
+    <div class="result">
+      <p>💸 Result: {{ result }}</p>
+    </div>
+  {% endif %}
+
+  <a href="/">⬅️ Back to Dashboard</a>
+</body>
+</html>
